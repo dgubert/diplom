@@ -1,9 +1,11 @@
 package pages;
 
+import com.codeborne.selenide.LocalStorage;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.html5.WebStorage;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,6 +19,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 import static asserts.AssertText.*;
 import static com.codeborne.selenide.WebDriverRunner.driver;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.awaitility.Awaitility.await;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -28,6 +31,10 @@ public class DeliveryPage {
     @Step("Открываем страницу доставки")
     public DeliveryPage openDeliveryPage() {
         open("/samovyvoz-i-dostavka/");
+
+        LocalStorage localStorage = localStorage();
+        localStorage.setItem("ux_city", "Санкт-Петербург");
+
         return this;
     }
 

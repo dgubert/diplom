@@ -22,9 +22,10 @@ public class BaseTest {
         Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.remote = System.getProperty("selenoidUrl", null);
-        Configuration.baseUrl = "https://ozerki.ru/";
+        Configuration.baseUrl = "https://ozerki.ru";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.timeout = 5000;
+        Configuration.pageLoadTimeout = 30000;
+        Configuration.timeout = 3000;
         //Configuration.holdBrowserOpen = true;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
