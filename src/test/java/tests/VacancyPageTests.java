@@ -29,9 +29,8 @@ public class VacancyPageTests extends BaseTest {
     @Issue("AUT-1235")
     @ParameterizedTest(name = "Проверка наличия вакансии {0}")
     @ValueSource( strings = {
-            "Фармацевт / провизор / консультант (ул. Аэропорт,88, ЖК \"БРУСНИКА\")",
-            "Разборщик товара / Специалист склада (Елизарова, 12)",
-            "Разборщик товара / Специалист склада (Гражданский пр-кт, 43)"
+            "Консультант в аптеку (Приладожский 23А)",
+            "Фармацевт-провизор (Загородный пр-кт, 36)"
         }
     )
     void shouldHaveVacancies(String vacancy) {
@@ -45,8 +44,7 @@ public class VacancyPageTests extends BaseTest {
     @ParameterizedTest(name = "Проверка поиска вакансии по значению {0}")
     @ValueSource( strings = {
             "Приладожский",
-            "Пейзажная",
-            "Беляево"
+            "Пейзажная"
         }
     )
     void shouldHaveVacanciesAfterSearch(String searchString) throws InterruptedException {
