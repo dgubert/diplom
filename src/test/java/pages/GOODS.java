@@ -2,7 +2,7 @@ package pages;
 
 public enum GOODS {
 
-    AKVAZIN (300608, "Аэрозоль", "0,9%", "5 месяцев", "Россия", "от 572 ₽", GOOD_CATEGORY.SREDSTVA_DLYA_PROMIVANIYA_NOSA),
+    AKVAZIN (300608, "Аэрозоль", "0,9%", "5 месяцев", "Россия", "495 ₽", GOOD_CATEGORY.SREDSTVA_DLYA_PROMIVANIYA_NOSA),
     AKVAMARIS (355970, "Капли назальные", "30%", "Длительный срок", "Хорватия", "274 ₽", GOOD_CATEGORY.SREDSTVA_DLYA_PROMIVANIYA_NOSA);
 
     private int id;

@@ -6,18 +6,20 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import pages.DeliveryPage;
+import pages.MainPage;
 
 public class DeliveryPageTests extends BaseTest {
 
-    DeliveryPage page = new DeliveryPage();
+    DeliveryPage deliveryPage = new DeliveryPage();
+    MainPage mainPage = new MainPage();
 
     @Test
     @Issue("AUT-1244")
     @DisplayName("Проверка Title на странице Доставки")
     void shouldHaveDeliveryTitleTest() {
-        page.openDeliveryPage();
+        deliveryPage.openDeliveryPage();
 
-        page.shoudHaveTitle("Самовывоз и доставка лекарств и товаров для ухода в Москве | Интернет-аптека «Озерки»");
+        deliveryPage.shoudHaveTitle("Самовывоз и доставка лекарств и товаров для ухода в Москве | Интернет-аптека «Озерки»");
     }
 
     @Issue("AUT-1245")
@@ -28,9 +30,9 @@ public class DeliveryPageTests extends BaseTest {
     }
     )
     void addressShouldNotHaveDeliveryTest(String address) {
-        page.openDeliveryPage();
-        page.changeCity("Санкт-Петербург");
-        page.addressShouldNotHaveDelivery(address);
+        deliveryPage.openDeliveryPage();
+        mainPage.changeCity("Санкт-Петербург");
+        deliveryPage.addressShouldNotHaveDelivery(address);
     }
 
     @Issue("AUT-1246")
@@ -41,9 +43,9 @@ public class DeliveryPageTests extends BaseTest {
     }
     )
     void checkAddressDeliveryConditionsTest(String address) {
-        page.openDeliveryPage();
-        page.changeCity("Санкт-Петербург");
-        page.assertAddressDeliveryConditions(address);
+        deliveryPage.openDeliveryPage();
+        mainPage.changeCity("Санкт-Петербург");
+        deliveryPage.assertAddressDeliveryConditions(address);
     }
 
     @Issue("AUT-1247")
@@ -54,8 +56,8 @@ public class DeliveryPageTests extends BaseTest {
     }
     )
     void checkPickupConditionsFromPharmacyTest(String address) throws InterruptedException {
-        page.openDeliveryPage();
-        page.changeCity("Санкт-Петербург");
-        page.assertPickupConditionsFromPharmacy(address);
+        deliveryPage.openDeliveryPage();
+        mainPage.changeCity("Санкт-Петербург");
+        deliveryPage.assertPickupConditionsFromPharmacy(address);
     }
 }
