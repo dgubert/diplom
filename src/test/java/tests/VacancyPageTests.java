@@ -2,8 +2,6 @@ package tests;
 
 import io.qameta.allure.Issue;
 import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,7 +14,6 @@ public class VacancyPageTests extends BaseTest {
     VacancyPage page = new VacancyPage();
 
     @Test
-    @Severity(SeverityLevel.MINOR)
     @Issue("AUT-1234")
     @DisplayName("Проверка Title на странице Вакансий")
     void shouldHaveVacancyTitle() {
@@ -25,7 +22,6 @@ public class VacancyPageTests extends BaseTest {
         page.shoudHaveTitle("Вакансии | Озерки");
     }
 
-    @Severity(SeverityLevel.CRITICAL)
     @Issue("AUT-1235")
     @ParameterizedTest(name = "Проверка наличия вакансии {0}")
     @ValueSource( strings = {
@@ -39,7 +35,6 @@ public class VacancyPageTests extends BaseTest {
         page.shoudHaveVacancy(vacancy);
     }
 
-    @Severity(SeverityLevel.CRITICAL)
     @Issue("AUT-1236")
     @ParameterizedTest(name = "Проверка поиска вакансии по значению {0}")
     @ValueSource( strings = {

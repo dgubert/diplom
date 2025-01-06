@@ -26,7 +26,9 @@ import static org.hamcrest.Matchers.equalTo;
 public class DeliveryPage {
     SelenideElement txtAddress = $("#addressID"),
             btnCheckAddress = $(byText("Проверить")),
-            btnChoosePharmacy = $("[href='/samovyvoz-i-dostavka/pickup/']");
+            btnChoosePharmacy = $("[href='/samovyvoz-i-dostavka/pickup/']"),
+            linkCity = $(".header-upper-region-control__text-overflow"),
+            chooseCityForm = $(".loader-wrapper");
 
     @Step("Открываем страницу доставки")
     public DeliveryPage openDeliveryPage() {
@@ -37,6 +39,16 @@ public class DeliveryPage {
 
         return this;
     }
+
+    @Step("Изменяем регион на {0}")
+    public void changeCity(String city) {
+        if (!linkCity.text().equals(city)) {
+            linkCity.click();
+            chooseCityForm.$(byText(city)).click();
+            linkCity.shouldHave(text(city));
+        }
+    }
+
 
     @Step("Проверяем Title страницы на соответствие {0}")
     public void shoudHaveTitle(String title) {
