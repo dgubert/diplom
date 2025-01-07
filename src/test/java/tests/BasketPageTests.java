@@ -21,7 +21,7 @@ public class BasketPageTests extends BaseTest {
         mainPage.changeCity("Санкт-Петербург");
         BasketApiHelper.addItemToBasketByApi(good.getId(), 1);
         basketPage.openBasketPage();
-        basketPage.checkGoodInfo(good);
+        basketPage.assertGoodInfo(good);
 
     }
 }
