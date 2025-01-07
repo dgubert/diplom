@@ -1,14 +1,13 @@
 package pages;
 
-import com.codeborne.selenide.LocalStorage;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static asserts.AssertText.assertExistByParentTextAndText;
 import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selectors.byId;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class GoodInfoPage {
 

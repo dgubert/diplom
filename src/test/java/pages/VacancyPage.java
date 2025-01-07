@@ -3,12 +3,12 @@ package pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.Assertions;
+
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
-import static com.codeborne.selenide.Selenide.*;
-
-public class VacancyPage {
+public class VacancyPage extends MainPage {
 
     SelenideElement vacanciesList = $(".vacancies__list"),
             vacanciesSearch = $(".vacancies__search [type=\"search\"]");
@@ -26,18 +26,6 @@ public class VacancyPage {
         vacanciesSearch.setValue(searchString).pressEnter();
         Thread.sleep(1000);
         return this;
-    }
-
-    @Step("Фильтр вакансий по городу {0}")
-    public VacancyPage filterVacanciesByCity(String city) throws InterruptedException {
-        vacanciesSearch.setValue(city).pressEnter();
-        Thread.sleep(1000);
-        return this;
-    }
-
-    @Step("Проверяем Title страницы на соответствие {0}")
-    public void shoudHaveTitle(String title) {
-        Assertions.assertEquals(title(), title);
     }
 
     @Step("Проверяем наличие вакансии {0}")

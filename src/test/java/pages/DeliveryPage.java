@@ -3,25 +3,13 @@ package pages;
 import com.codeborne.selenide.LocalStorage;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.html5.WebStorage;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 import static asserts.AssertText.assertExistByParentTextAndText;
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-
-import static asserts.AssertText.*;
-import static com.codeborne.selenide.WebDriverRunner.driver;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static org.awaitility.Awaitility.await;
-import static org.hamcrest.Matchers.equalTo;
 
 public class DeliveryPage extends MainPage {
     SelenideElement txtAddress = $("#addressID"),
@@ -29,18 +17,11 @@ public class DeliveryPage extends MainPage {
             btnChoosePharmacy = $("[href='/samovyvoz-i-dostavka/pickup/']");
 
     @Step("Открываем страницу доставки")
-    public DeliveryPage openDeliveryPage() {
+    public void openDeliveryPage() {
         open("/samovyvoz-i-dostavka/");
 
         LocalStorage localStorage = localStorage();
         localStorage.setItem("ux_city", "Санкт-Петербург");
-
-        return this;
-    }
-
-    @Step("Проверяем Title страницы на соответствие {0}")
-    public void shoudHaveTitle(String title) {
-        Assertions.assertEquals(title(), title);
     }
 
     @Step("Проверяем недоступность доставки по адресу {0}")
@@ -60,11 +41,6 @@ public class DeliveryPage extends MainPage {
         assertExistByParentTextAndText("Прием заказов","Круглосуточно");
         assertExistByParentTextAndText("Максимальный вес","до 5 кг");
         assertExistByParentTextAndText("Интервалы доставки","Ежедневно с 10:00 до 20:00");
-    }
-
-    @Step("Выбираем аптеку {0} для самовывоза")
-    public void choosePharmacyForPickup(String pharmacyAddress) {
-
     }
 
     @Step("Проверяем условия самовывоза по адресу {0}")

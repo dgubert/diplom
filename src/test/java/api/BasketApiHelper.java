@@ -1,6 +1,5 @@
 package api;
 
-import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
 import models.AddItemToBasketRequestModel;
 import models.AddItemToBasketResponseModel;

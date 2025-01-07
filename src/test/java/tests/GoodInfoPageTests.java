@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -10,6 +11,7 @@ public class GoodInfoPageTests extends BaseTest {
 
     GoodInfoPage goodInfoPage = new GoodInfoPage();
 
+    @Owner("Denis Gubert")
     @ParameterizedTest
     @EnumSource(GOODS.class)
     @DisplayName("Проверка информации по товару на странице товара {0}")

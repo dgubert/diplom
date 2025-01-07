@@ -1,5 +1,5 @@
 
-<h1 align="center">14 урок. Домашняя работа.<br>Тесты на страницу Вакансии компании <a href="https://ozerki.ru/vacancies/"> Озерки.</a></h1>
+<h1 align="center">Дипломная работа (WEB + API).<br>Тесты на сайт <a href="https://ozerki.ru/"> Озерки.</a></h1>
 
 
 ##  **Содержание:**
@@ -37,6 +37,10 @@
 - ✓ *[Проверка названия страницы](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/1c28556ee444b478/)*
 - ✓ *[Проверка наличия вакансий на странице](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/14a613d3621c9b18/)*
 - ✓ *[Проверка поиска вакансий](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/1e4c6794abd12a0c/)*
+- ✓ *[Проверка названия страницы](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/1c28556ee444b478/)*
+- ✓ *[Проверка наличия вакансий на странице](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/14a613d3621c9b18/)*
+- ✓ *[Проверка поиска вакансий](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/1e4c6794abd12a0c/)*
+
 
 ## <img height="25" src="media/logo/Jenkins.svg" width="25"/> Запуск тестов в Jenkins:
 

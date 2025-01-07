@@ -1,6 +1,7 @@
 package tests;
 
 import io.qameta.allure.Issue;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,6 +12,7 @@ public class DeliveryPageTests extends BaseTest {
 
     DeliveryPage deliveryPage = new DeliveryPage();
 
+    @Owner("Denis Gubert")
     @Test
     @Issue("AUT-1244")
     @DisplayName("Проверка Title на странице Доставки")
@@ -20,6 +22,7 @@ public class DeliveryPageTests extends BaseTest {
         deliveryPage.shoudHaveTitle("Самовывоз и доставка лекарств и товаров для ухода в Москве | Интернет-аптека «Озерки»");
     }
 
+    @Owner("Denis Gubert")
     @Issue("AUT-1245")
     @ParameterizedTest(name = "Отсутствие доставки для адреса {0}")
     @ValueSource( strings = {
@@ -34,6 +37,7 @@ public class DeliveryPageTests extends BaseTest {
         deliveryPage.addressShouldNotHaveDelivery(address);
     }
 
+    @Owner("Denis Gubert")
     @Issue("AUT-1246")
     @ParameterizedTest(name = "Условия доставки для адреса {0}")
     @ValueSource( strings = {
@@ -48,6 +52,7 @@ public class DeliveryPageTests extends BaseTest {
         deliveryPage.assertAddressDeliveryConditions(address);
     }
 
+    @Owner("Denis Gubert")
     @Issue("AUT-1247")
     @ParameterizedTest(name = "Условия самовывоза из аптеки по адресу {0}")
     @ValueSource( strings = {

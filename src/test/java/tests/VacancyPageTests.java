@@ -11,17 +11,19 @@ import pages.VacancyPage;
 @Owner("Denis Gubert")
 public class VacancyPageTests extends BaseTest {
 
-    VacancyPage page = new VacancyPage();
+    VacancyPage vacancyPage = new VacancyPage();
 
+    @Owner("Denis Gubert")
     @Test
     @Issue("AUT-1234")
     @DisplayName("Проверка Title на странице Вакансий")
     void shouldHaveVacancyTitle() {
-        page.openVacancyPage();
+        vacancyPage.openVacancyPage();
 
-        page.shoudHaveTitle("Вакансии | Озерки");
+        vacancyPage.shoudHaveTitle("Вакансии | Озерки");
     }
 
+    @Owner("Denis Gubert")
     @Issue("AUT-1235")
     @ParameterizedTest(name = "Проверка наличия вакансии {0}")
     @ValueSource( strings = {
@@ -30,11 +32,12 @@ public class VacancyPageTests extends BaseTest {
         }
     )
     void shouldHaveVacancies(String vacancy) {
-        page.openVacancyPage();
+        vacancyPage.openVacancyPage();
 
-        page.shoudHaveVacancy(vacancy);
+        vacancyPage.shoudHaveVacancy(vacancy);
     }
 
+    @Owner("Denis Gubert")
     @Issue("AUT-1236")
     @ParameterizedTest(name = "Проверка поиска вакансии по значению {0}")
     @ValueSource( strings = {
@@ -43,9 +46,9 @@ public class VacancyPageTests extends BaseTest {
         }
     )
     void shouldHaveVacanciesAfterSearch(String searchString) throws InterruptedException {
-        page.openVacancyPage()
+        vacancyPage.openVacancyPage()
                 .filterVacanciesByString(searchString);
 
-        page.shoudHaveStringInVacancies(searchString);
+        vacancyPage.shoudHaveStringInVacancies(searchString);
     }
 }
