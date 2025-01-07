@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class MainPage {
 
     SelenideElement linkCity = $(".header-upper-region-control__text-overflow"),
-            chooseCityForm = $(byText("Ваш населенный пункт")).parent().parent();
+            chooseCityForm = $(".modal-base__title").parent().parent();
 
     @Step("Изменяем регион на {0}")
     public void changeCity(String city) {

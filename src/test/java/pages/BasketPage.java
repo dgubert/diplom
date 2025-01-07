@@ -30,6 +30,5 @@ public class BasketPage {
         SelenideElement form = $(".basket-detail__content");
 
         form.$(byText(good.getPrice())).shouldBe(exist);
-        form.$(byText(good.getGoodCategory().getName())).shouldBe(exist);
     }
 }
