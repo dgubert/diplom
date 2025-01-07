@@ -21,7 +21,7 @@ public class BasketPageTests extends BaseTest {
     void shouldHaveBasketTitleTest() {
         basketPage.openBasketPage();
 
-        basketPage.shoudHaveTitle("Корзина");
+        basketPage.shouldHaveTitle("Корзина");
     }
 
     @Owner("Denis Gubert")

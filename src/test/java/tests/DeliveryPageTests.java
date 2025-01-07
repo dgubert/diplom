@@ -19,7 +19,7 @@ public class DeliveryPageTests extends BaseTest {
     void shouldHaveDeliveryTitleTest() {
         deliveryPage.openDeliveryPage();
 
-        deliveryPage.shoudHaveTitle("Самовывоз и доставка лекарств и товаров для ухода в Москве | Интернет-аптека «Озерки»");
+        deliveryPage.shouldHaveTitle("Самовывоз и доставка лекарств и товаров для ухода в Москве | Интернет-аптека «Озерки»");
     }
 
     @Owner("Denis Gubert")

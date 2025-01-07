@@ -20,7 +20,7 @@ public class VacancyPageTests extends BaseTest {
     void shouldHaveVacancyTitle() {
         vacancyPage.openVacancyPage();
 
-        vacancyPage.shoudHaveTitle("Вакансии | Озерки");
+        vacancyPage.shouldHaveTitle("Вакансии | Озерки");
     }
 
     @Owner("Denis Gubert")

@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 
-import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.title;
@@ -15,7 +15,7 @@ public class MainPage {
             chooseCityForm = $("#addressInput");
 
     @Step("Проверяем Title страницы на соответствие {0}")
-    public void shoudHaveTitle(String title) {
+    public void shouldHaveTitle(String title) {
         Assertions.assertEquals(title(), title);
     }
 
@@ -24,7 +24,7 @@ public class MainPage {
         if (!linkCity.text().equals(city)) {
             linkCity.click();
             chooseCityForm.parent().parent().parent().$(byText(city)).click();
-            chooseCityForm.shouldNotBe(exist);
+            chooseCityForm.shouldNotBe(visible);
         }
     }
 }

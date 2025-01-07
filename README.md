@@ -34,12 +34,10 @@
 
 ---
 
-- ✓ *[Проверка названия страницы](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/1c28556ee444b478/)*
-- ✓ *[Проверка наличия вакансий на странице](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/14a613d3621c9b18/)*
-- ✓ *[Проверка поиска вакансий](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/1e4c6794abd12a0c/)*
-- ✓ *[Проверка названия страницы](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/1c28556ee444b478/)*
-- ✓ *[Проверка наличия вакансий на странице](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/14a613d3621c9b18/)*
-- ✓ *[Проверка поиска вакансий](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00/1e4c6794abd12a0c/)*
+- ✓ *[Блок тестов на страницу Вакансии](https://jenkins.autotests.cloud/job/dgubert_diplom/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00)*
+- ✓ *[Блок тестов на страницу Доставки](https://jenkins.autotests.cloud/job/dgubert_diplom/allure/#suites/67f4c4c8710470fd60a86df755a1ae45)*
+- ✓ *[Блок тестов на страницу Корзины](https://jenkins.autotests.cloud/job/dgubert_diplom/allure/#suites/69b0fdd81f9b2e0d224f7b84f144f8e2)*
+- ✓ *[Блок тестов на страницу Товара](https://jenkins.autotests.cloud/job/dgubert_diplom/allure/#suites/8c92fbdda1c56fb10780cf1c13f3a695)*
 
 
 ## <img height="25" src="media/logo/Jenkins.svg" width="25"/> Запуск тестов в Jenkins:

@@ -22,8 +22,7 @@ public class BaseTest {
         Configuration.baseUrl = "https://ozerki.ru";
         Configuration.pageLoadStrategy = "eager";
         Configuration.pageLoadTimeout = 30000;
-        Configuration.timeout = 3000;
-        //Configuration.holdBrowserOpen = true;
+        Configuration.timeout = 5000;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
