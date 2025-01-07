@@ -11,13 +11,13 @@ import static com.codeborne.selenide.Selenide.$;
 public class MainPage {
 
     SelenideElement linkCity = $(".header-upper-region-control__text-overflow"),
-            chooseCityForm = $(".modal-base__title");
+            chooseCityForm = $("#addressInput");
 
     @Step("Изменяем регион на {0}")
     public void changeCity(String city) {
         if (!linkCity.text().equals(city)) {
             linkCity.click();
-            chooseCityForm.parent().parent().$(byText(city)).click();
+            chooseCityForm.parent().parent().parent().$(byText(city)).click();
             chooseCityForm.shouldNotBe(exist);
         }
     }
