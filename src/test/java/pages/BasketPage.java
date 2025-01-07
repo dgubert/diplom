@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class BasketPage {
+public class BasketPage extends MainPage {
 
     @Step("Открываем страницу корзины")
     public BasketPage openBasketPage() {

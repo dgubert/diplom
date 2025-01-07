@@ -23,7 +23,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.awaitility.Awaitility.await;
 import static org.hamcrest.Matchers.equalTo;
 
-public class DeliveryPage {
+public class DeliveryPage extends MainPage {
     SelenideElement txtAddress = $("#addressID"),
             btnCheckAddress = $(byText("Проверить")),
             btnChoosePharmacy = $("[href='/samovyvoz-i-dostavka/pickup/']");

@@ -6,12 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import pages.DeliveryPage;
-import pages.MainPage;
 
 public class DeliveryPageTests extends BaseTest {
 
     DeliveryPage deliveryPage = new DeliveryPage();
-    MainPage mainPage = new MainPage();
 
     @Test
     @Issue("AUT-1244")
@@ -31,7 +29,8 @@ public class DeliveryPageTests extends BaseTest {
     )
     void addressShouldNotHaveDeliveryTest(String address) {
         deliveryPage.openDeliveryPage();
-        mainPage.changeCity("Санкт-Петербург");
+        deliveryPage.changeCity("Санкт-Петербург");
+
         deliveryPage.addressShouldNotHaveDelivery(address);
     }
 
@@ -44,7 +43,8 @@ public class DeliveryPageTests extends BaseTest {
     )
     void checkAddressDeliveryConditionsTest(String address) {
         deliveryPage.openDeliveryPage();
-        mainPage.changeCity("Санкт-Петербург");
+        deliveryPage.changeCity("Санкт-Петербург");
+
         deliveryPage.assertAddressDeliveryConditions(address);
     }
 
@@ -57,7 +57,8 @@ public class DeliveryPageTests extends BaseTest {
     )
     void checkPickupConditionsFromPharmacyTest(String address) throws InterruptedException {
         deliveryPage.openDeliveryPage();
-        mainPage.changeCity("Санкт-Петербург");
+        deliveryPage.changeCity("Санкт-Петербург");
+
         deliveryPage.assertPickupConditionsFromPharmacy(address);
     }
 }
