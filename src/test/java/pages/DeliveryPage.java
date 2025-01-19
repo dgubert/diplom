@@ -17,11 +17,11 @@ public class DeliveryPage extends MainPage {
     final SelenideElement btnChoosePharmacy = $("[href='/samovyvoz-i-dostavka/pickup/']");
 
     @Step("Открываем страницу доставки")
-    public void openDeliveryPage() {
+    public void openDeliveryPage(REGION region) {
         open("/samovyvoz-i-dostavka/");
 
         LocalStorage localStorage = localStorage();
-        localStorage.setItem("ux_city", REGION.SAINT_PETERSBURG.getName());
+        localStorage.setItem("ux_city", region.getName());
     }
 
     @Step("Проверяем недоступность доставки по адресу {0}")

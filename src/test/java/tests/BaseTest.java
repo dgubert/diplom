@@ -18,7 +18,7 @@ public class BaseTest {
         Configuration.browser = System.getProperty("browserName", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.remote = System.getProperty("selenoidUrl", null);
+        Configuration.remote = System.getProperty("selenoidUrl");
         Configuration.baseUrl = "https://ozerki.ru";
         Configuration.pageLoadStrategy = "eager";
         Configuration.pageLoadTimeout = 30000;

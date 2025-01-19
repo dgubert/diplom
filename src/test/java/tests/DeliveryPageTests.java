@@ -18,7 +18,7 @@ public class DeliveryPageTests extends BaseTest {
     @Issue("AUT-1244")
     @DisplayName("Проверка Title на странице Доставки")
     void shouldHaveDeliveryTitleTest() {
-        deliveryPage.openDeliveryPage();
+        deliveryPage.openDeliveryPage(REGION.SAINT_PETERSBURG);
 
         deliveryPage.shouldHaveTitle("Самовывоз и доставка лекарств и товаров для ухода в Москве | Интернет-аптека «Озерки»");
     }
@@ -32,7 +32,7 @@ public class DeliveryPageTests extends BaseTest {
     }
     )
     void addressShouldNotHaveDeliveryTest(String address) {
-        deliveryPage.openDeliveryPage();
+        deliveryPage.openDeliveryPage(REGION.SAINT_PETERSBURG);
         deliveryPage.changeCity(REGION.SAINT_PETERSBURG);
 
         deliveryPage.addressShouldNotHaveDelivery(address);
@@ -47,7 +47,7 @@ public class DeliveryPageTests extends BaseTest {
     }
     )
     void checkAddressDeliveryConditionsTest(String address) {
-        deliveryPage.openDeliveryPage();
+        deliveryPage.openDeliveryPage(REGION.SAINT_PETERSBURG);
         deliveryPage.changeCity(REGION.SAINT_PETERSBURG);
 
         deliveryPage.assertAddressDeliveryConditions(address);
@@ -62,7 +62,7 @@ public class DeliveryPageTests extends BaseTest {
     }
     )
     void checkPickupConditionsFromPharmacyTest(String address) {
-        deliveryPage.openDeliveryPage();
+        deliveryPage.openDeliveryPage(REGION.SAINT_PETERSBURG);
         deliveryPage.changeCity(REGION.SAINT_PETERSBURG);
 
         deliveryPage.assertPickupConditionsFromPharmacy(address);

@@ -15,8 +15,6 @@ import static specs.ResponseSpec.response200Spec;
 
 public class BasketApiHelper {
 
-    public String cartId;
-
     public static String getCartId() {
 
         Cookie cookie = getWebDriver().manage().getCookieNamed("cartId");
@@ -33,9 +31,7 @@ public class BasketApiHelper {
 
     @Step("Добавление товара {0} в корзину")
     public static void addItemToBasketByApi(REGION region, int productId, int quantity) {
-        BasketApiHelper basketApiHelper = new BasketApiHelper();
-
-        basketApiHelper.cartId = getCartId();
+        String cartId = getCartId();
 
         ItemJsonRequestModel item = new ItemJsonRequestModel();
         item.setGoodsId(productId);
@@ -45,7 +41,7 @@ public class BasketApiHelper {
 
 
         AddItemToBasketRequestModel requestModel = new AddItemToBasketRequestModel();
-        requestModel.setCartId(basketApiHelper.cartId);
+        requestModel.setCartId(cartId);
         requestModel.setRegionId(region.getId());
         requestModel.setItems(items);
 
