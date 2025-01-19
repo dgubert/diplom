@@ -1,6 +1,6 @@
 package pages;
 
-public enum GOODS {
+public enum PRODUCTS {
 
     TERAFLYU(3728, "Порошок", "325мг+10мг+20мг+50мг", "Длительный срок", "США", "668 ₽", "teraflyu-ot-grippa-i-prostudy-por-d-r-ra-vn-pak-10-limon-1"),
     AKVAMARIS(355970, "Капли назальные", "30%", "Длительный срок", "Хорватия", "257 ₽", "akva-maris-kapli-naz-d-detey-fl-kap-10ml-1"),
@@ -14,7 +14,7 @@ public enum GOODS {
     private final String price;
     private final String link;
 
-    GOODS(int id, String form, String dosage, String expirationDate, String country, String price, String link) {
+    PRODUCTS(int id, String form, String dosage, String expirationDate, String country, String price, String link) {
         this.id = id;
         this.form = form;
         this.dosage = dosage;
@@ -54,7 +54,7 @@ public enum GOODS {
 
     @Override
     public String toString() {
-        return "Goods{" +
+        return "Product{" +
                 "id=" + id +
                 ", form='" + form + '\'' +
                 ", dosage='" + dosage + '\'' +

@@ -16,9 +16,9 @@ public class BasketPage extends MainPage {
     }
 
     @Step("Проверяем информацию по товару {0} в корзине")
-    public void assertGoodInfo(GOODS good) {
+    public void assertProductInfo(PRODUCTS product) {
         SelenideElement form = $(".basket-detail__content");
 
-        form.$(byText(good.getPrice())).shouldBe(exist);
+        form.$(byText(product.getPrice())).shouldBe(exist);
     }
 }

@@ -32,13 +32,13 @@ public class BasketApiHelper {
     }
 
     @Step("Добавление товара {0} в корзину")
-    public static void addItemToBasketByApi(int goodId, int quantity) {
+    public static void addItemToBasketByApi(int productId, int quantity) {
         BasketApiHelper basketApiHelper = new BasketApiHelper();
 
         basketApiHelper.cartId = getCartId();
 
         ItemJsonRequestModel item = new ItemJsonRequestModel();
-        item.setGoodsId(goodId);
+        item.setGoodsId(productId);
         item.setQuantity(quantity);
 
         ItemJsonRequestModel[] items = {item};

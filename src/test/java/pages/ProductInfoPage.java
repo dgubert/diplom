@@ -9,21 +9,21 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class GoodInfoPage {
+public class ProductInfoPage {
 
     @Step("Открываем страницу продукта {0}")
-    public void openGoodInfoPage(String goodLink) {
-        open("/sankt-peterburg/catalog/product/" + goodLink + "/");
+    public void openProductInfoPage(String productLink) {
+        open("/sankt-peterburg/catalog/product/" + productLink + "/");
     }
 
     @Step("Проверяем данные продукта {0}")
-    public void assertGoodInfo(GOODS good) {
+    public void assertProductInfo(PRODUCTS product) {
         SelenideElement form = $(byId("mainAnchor"));
 
-        form.$(byText(good.getForm())).shouldBe(exist);
-        form.$(byText(good.getDosage())).shouldBe(exist);
-        form.$(byText(good.getExpirationDate())).shouldBe(exist);
-        form.$(byText(good.getCountry())).shouldBe(exist);
-        form.$(byText(good.getPrice())).shouldBe(exist);
+        form.$(byText(product.getForm())).shouldBe(exist);
+        form.$(byText(product.getDosage())).shouldBe(exist);
+        form.$(byText(product.getExpirationDate())).shouldBe(exist);
+        form.$(byText(product.getCountry())).shouldBe(exist);
+        form.$(byText(product.getPrice())).shouldBe(exist);
     }
 }

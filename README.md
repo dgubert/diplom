@@ -21,6 +21,10 @@
 |:---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 | <a href="https://www.java.com/"> <img src="media/logo/Java.svg" height="50" width="50"/></a> | <a href="https://www.jetbrains.com/idea/"><img height="50" src="media/logo/Intelij_IDEA.svg" width="50"/></a> | <a href="https://github.com/"><img alt="Github" height="50" src="media/logo/GitHub.svg" width="50"/></a> | <a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="media/logo/JUnit5.svg" width="50"/></a> | <a href="https://gradle.org/"><img alt="Gradle" height="50" src="media/logo/Gradle.svg" width="50"/></a> | <a href="https://selenide.org/"><img alt="Selenide" height="50" src="media/logo/Selenide.svg" width="50"/></a> | <a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="media/logo/Selenoid.svg" width="50"/></a> | <a href="https://github.com/allure-framework"><img alt="Allure" height="50" src="media/logo/Allure_Report.svg" width="50"/></a> | <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="media/logo/Jenkins.svg" width="50"/></a> | <a href="https://web.telegram.org/"><img alt="Telegram" height="50" src="media/logo/Telegram.svg" width="50"/></a> |
 
+Тесты написаны на языке Java с использованием фреймворков JUnit5 и Selenide, сборщик - Gradle.
+Запуск тестов реализован в Jenkins с использованием Selenoid.
+На выходе прогона тестов получаем Allure-отчет с автоматическим уведомлением в Telegram и фиксацией результатов в Allure TestOps.
+
 
 Содержание [Allure-отчета](https://jenkins.autotests.cloud/job/dgubert_lesson14_vacancy/allure/#suites):
 * Шаги теста
@@ -34,10 +38,10 @@
 
 ---
 
-- ✓ *[Блок тестов на страницу Вакансии](https://jenkins.autotests.cloud/job/dgubert_diplom/21/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00)*
-- ✓ *[Блок тестов на страницу Доставки](https://jenkins.autotests.cloud/job/dgubert_diplom/21/allure/#suites/67f4c4c8710470fd60a86df755a1ae45)*
-- ✓ *[Блок тестов на страницу Корзины](https://jenkins.autotests.cloud/job/dgubert_diplom/21/allure/#suites/69b0fdd81f9b2e0d224f7b84f144f8e2)*
-- ✓ *[Блок тестов на страницу Товара](https://jenkins.autotests.cloud/job/dgubert_diplom/21/allure/#suites/8c92fbdda1c56fb10780cf1c13f3a695)*
+- ✓ *[Блок тестов на страницу Вакансии](https://jenkins.autotests.cloud/job/dgubert_diplom/allure/#suites/0598bc41331f40ac0f38fe5d0c32bb00)*
+- ✓ *[Блок тестов на страницу Доставки](https://jenkins.autotests.cloud/job/dgubert_diplom/allure/#suites/67f4c4c8710470fd60a86df755a1ae45)*
+- ✓ *[Блок тестов на страницу Корзины](https://jenkins.autotests.cloud/job/dgubert_diplom/allure/#suites/69b0fdd81f9b2e0d224f7b84f144f8e2)*
+- ✓ *[Блок тестов на страницу Товара](https://jenkins.autotests.cloud/job/dgubert_diplom/allure/#suites/8c92fbdda1c56fb10780cf1c13f3a695)*
 
 
 ## <img height="25" src="media/logo/Jenkins.svg" width="25"/> Запуск тестов в Jenkins:
@@ -59,7 +63,7 @@ clean test --debug
 -DselenoidUrl=${selenoidUrl}
 ```
 
-## <img height="25" src="media/logo/Allure_Report.svg" width="25"/></a>  <a name="Allure"></a>Allure Report	</a>
+## <img height="25" src="media/logo/Allure_Report.svg" width="25"/></a>  <a href="https://jenkins.autotests.cloud/job/dgubert_diplom/allure/">Allure Report	</a>
 
 ---
 
