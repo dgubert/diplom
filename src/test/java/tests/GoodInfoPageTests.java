@@ -9,7 +9,7 @@ import pages.GoodInfoPage;
 
 public class GoodInfoPageTests extends BaseTest {
 
-    GoodInfoPage goodInfoPage = new GoodInfoPage();
+    final GoodInfoPage goodInfoPage = new GoodInfoPage();
 
     @Owner("Denis Gubert")
     @ParameterizedTest

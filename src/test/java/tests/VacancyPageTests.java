@@ -11,7 +11,7 @@ import pages.VacancyPage;
 @Owner("Denis Gubert")
 public class VacancyPageTests extends BaseTest {
 
-    VacancyPage vacancyPage = new VacancyPage();
+    final VacancyPage vacancyPage = new VacancyPage();
 
     @Owner("Denis Gubert")
     @Test
@@ -26,10 +26,10 @@ public class VacancyPageTests extends BaseTest {
     @Owner("Denis Gubert")
     @Issue("AUT-1235")
     @ParameterizedTest(name = "Проверка наличия вакансии {0}")
-    @ValueSource( strings = {
+    @ValueSource(strings = {
             "Консультант в аптеку (Приладожский 23А)",
             "Фармацевт-провизор (Загородный пр-кт, 36)"
-        }
+    }
     )
     void shouldHaveVacancies(String vacancy) {
         vacancyPage.openVacancyPage();
@@ -40,10 +40,10 @@ public class VacancyPageTests extends BaseTest {
     @Owner("Denis Gubert")
     @Issue("AUT-1236")
     @ParameterizedTest(name = "Проверка поиска вакансии по значению {0}")
-    @ValueSource( strings = {
+    @ValueSource(strings = {
             "Приладожский",
             "Пейзажная"
-        }
+    }
     )
     void shouldHaveVacanciesAfterSearch(String searchString) throws InterruptedException {
         vacancyPage.openVacancyPage()

@@ -10,10 +10,10 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class VacancyPage extends MainPage {
 
-    SelenideElement vacanciesList = $(".vacancies__list"),
-            vacanciesSearch = $(".vacancies__search [type=\"search\"]");
+    final SelenideElement vacanciesList = $(".vacancies__list");
+    final SelenideElement vacanciesSearch = $(".vacancies__search [type=\"search\"]");
 
-    ElementsCollection vacanciesTitle = vacanciesList.$$("h3");
+    final ElementsCollection vacanciesTitle = vacanciesList.$$("h3");
 
     @Step("Открываем страницу вакансий")
     public VacancyPage openVacancyPage() {
@@ -22,10 +22,9 @@ public class VacancyPage extends MainPage {
     }
 
     @Step("Фильтр вакансий по строке {0}")
-    public VacancyPage filterVacanciesByString(String searchString) throws InterruptedException {
+    public void filterVacanciesByString(String searchString) throws InterruptedException {
         vacanciesSearch.setValue(searchString).pressEnter();
         Thread.sleep(1000);
-        return this;
     }
 
     @Step("Проверяем наличие вакансии {0}")
@@ -35,7 +34,7 @@ public class VacancyPage extends MainPage {
 
     @Step("Проверяем наличие в отображаемых вакансиях {0}")
     public void shoudHaveStringInVacancies(String str) {
-        for (SelenideElement vacancy:
+        for (SelenideElement vacancy :
                 vacanciesTitle) {
             vacancy.shouldHave(text(str));
         }

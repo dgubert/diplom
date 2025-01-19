@@ -12,9 +12,9 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class DeliveryPage extends MainPage {
-    SelenideElement txtAddress = $("#addressID"),
-            btnCheckAddress = $(byText("Проверить")),
-            btnChoosePharmacy = $("[href='/samovyvoz-i-dostavka/pickup/']");
+    final SelenideElement txtAddress = $("#addressID");
+    final SelenideElement btnCheckAddress = $(byText("Проверить"));
+    final SelenideElement btnChoosePharmacy = $("[href='/samovyvoz-i-dostavka/pickup/']");
 
     @Step("Открываем страницу доставки")
     public void openDeliveryPage() {
@@ -37,27 +37,27 @@ public class DeliveryPage extends MainPage {
         $(".CUgKW").$(byText(address)).click();
         btnCheckAddress.click();
         $(byTagAndText("h2", "Курьерская доставка")).shouldBe(exist);
-        assertExistByParentTextAndText("Оплата","Картой на сайте");
-        assertExistByParentTextAndText("Прием заказов","Круглосуточно");
-        assertExistByParentTextAndText("Максимальный вес","до 5 кг");
-        assertExistByParentTextAndText("Интервалы доставки","Ежедневно с 10:00 до 20:00");
+        assertExistByParentTextAndText("Оплата", "Картой на сайте");
+        assertExistByParentTextAndText("Прием заказов", "Круглосуточно");
+        assertExistByParentTextAndText("Максимальный вес", "до 5 кг");
+        assertExistByParentTextAndText("Интервалы доставки", "Ежедневно с 10:00 до 20:00");
     }
 
     @Step("Проверяем условия самовывоза по адресу {0}")
-    public void assertPickupConditionsFromPharmacy(String address) throws InterruptedException {
+    public void assertPickupConditionsFromPharmacy(String address) {
         btnChoosePharmacy.click();
         $(byText(address)).click();
 
         $(".input").shouldHave(value(address));
         $(byTagAndText("h2", "Самовывоз из аптеки")).shouldBe(exist);
         assertExistByParentTextAndText("Стоимость", "Бесплатно");
-        assertExistByParentTextAndText("Оплата","Картой на сайте");
-        assertExistByParentTextAndText("Оплата","Картой или наличными в аптеке");
-        assertExistByParentTextAndText("Хранение заказов","до 3-х дней");
-        assertExistByParentTextAndText("Хранение заказов","Возможно продление");
-        assertExistByParentTextAndText("Рецептурные препараты","Предъявите рецепт в аптеке");
-        assertExistByParentTextAndText("Время сборки заказов","до 30 минут");
-        assertExistByParentTextAndText("Самовывоз заказов","8:00-22:00");
-        assertExistByParentTextAndText("Самовывоз заказов","00:00-23:00");
+        assertExistByParentTextAndText("Оплата", "Картой на сайте");
+        assertExistByParentTextAndText("Оплата", "Картой или наличными в аптеке");
+        assertExistByParentTextAndText("Хранение заказов", "до 3-х дней");
+        assertExistByParentTextAndText("Хранение заказов", "Возможно продление");
+        assertExistByParentTextAndText("Рецептурные препараты", "Предъявите рецепт в аптеке");
+        assertExistByParentTextAndText("Время сборки заказов", "до 30 минут");
+        assertExistByParentTextAndText("Самовывоз заказов", "8:00-22:00");
+        assertExistByParentTextAndText("Самовывоз заказов", "00:00-23:00");
     }
 }

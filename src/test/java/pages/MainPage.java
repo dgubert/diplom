@@ -11,8 +11,8 @@ import static com.codeborne.selenide.Selenide.title;
 
 public class MainPage {
 
-    SelenideElement linkCity = $(".header-upper-region-control__text-overflow"),
-            chooseCityForm = $("[placeholder=\"Ваш город или регион\"]");
+    final SelenideElement linkCity = $(".header-upper-region-control__text-overflow");
+    final SelenideElement chooseCityForm = $("[placeholder=\"Ваш город или регион\"]");
 
     @Step("Проверяем Title страницы на соответствие {0}")
     public void shouldHaveTitle(String title) {

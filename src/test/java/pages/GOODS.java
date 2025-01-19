@@ -3,16 +3,16 @@ package pages;
 public enum GOODS {
 
     TERAFLYU(3728, "Порошок", "325мг+10мг+20мг+50мг", "Длительный срок", "США", "668 ₽", "teraflyu-ot-grippa-i-prostudy-por-d-r-ra-vn-pak-10-limon-1"),
-    AKVAMARIS (355970, "Капли назальные", "30%", "Длительный срок", "Хорватия", "257 ₽", "akva-maris-kapli-naz-d-detey-fl-kap-10ml-1"),
+    AKVAMARIS(355970, "Капли назальные", "30%", "Длительный срок", "Хорватия", "257 ₽", "akva-maris-kapli-naz-d-detey-fl-kap-10ml-1"),
     NUROFEN(112301, "Капсулы", "200мг", "Длительный срок", "Нидерланды", "288 ₽", "nurofen_ekspress_kaps_200mg_n16");
 
-    private int id;
-    private String form,
-            dosage,
-            expirationDate,
-            country,
-            price,
-            link;
+    private final int id;
+    private final String form;
+    private final String dosage;
+    private final String expirationDate;
+    private final String country;
+    private final String price;
+    private final String link;
 
     GOODS(int id, String form, String dosage, String expirationDate, String country, String price, String link) {
         this.id = id;

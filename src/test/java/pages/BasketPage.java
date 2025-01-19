@@ -11,9 +11,8 @@ import static com.codeborne.selenide.Selenide.open;
 public class BasketPage extends MainPage {
 
     @Step("Открываем страницу корзины")
-    public BasketPage openBasketPage() {
+    public void openBasketPage() {
         open("/basket/");
-        return this;
     }
 
     @Step("Проверяем информацию по товару {0} в корзине")

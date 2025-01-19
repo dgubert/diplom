@@ -14,7 +14,7 @@ import static specs.ResponseSpec.response200Spec;
 
 public class BasketApiHelper {
 
-    public static int regionId = 27;
+    public static final int regionId = 27;
     public String cartId;
 
     public static String getCartId() {
@@ -30,8 +30,9 @@ public class BasketApiHelper {
         return cookie.getValue();
 
     }
+
     @Step("Добавление товара {0} в корзину")
-    public static AddItemToBasketResponseModel addItemToBasketByApi(int goodId, int quantity) {
+    public static void addItemToBasketByApi(int goodId, int quantity) {
         BasketApiHelper basketApiHelper = new BasketApiHelper();
 
         basketApiHelper.cartId = getCartId();
@@ -49,17 +50,13 @@ public class BasketApiHelper {
         requestModel.setItems(items);
 
 
-        return given(requestSpec)
+        given(requestSpec)
                 .body(requestModel)
-            .when()
+                .when()
                 .post("/api/basket/current/items/add")
-            .then()
+                .then()
                 .spec(response200Spec)
                 .extract().response().as(AddItemToBasketResponseModel.class);
     }
 
-    @Step("Удаление товара {0} из корзины")
-    void deleteItemFromBasketByApi(int item) {
-
-    }
 }

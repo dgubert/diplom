@@ -10,7 +10,7 @@ import pages.DeliveryPage;
 
 public class DeliveryPageTests extends BaseTest {
 
-    DeliveryPage deliveryPage = new DeliveryPage();
+    final DeliveryPage deliveryPage = new DeliveryPage();
 
     @Owner("Denis Gubert")
     @Test
@@ -25,7 +25,7 @@ public class DeliveryPageTests extends BaseTest {
     @Owner("Denis Gubert")
     @Issue("AUT-1245")
     @ParameterizedTest(name = "Отсутствие доставки для адреса {0}")
-    @ValueSource( strings = {
+    @ValueSource(strings = {
             "Мурманск, ул. Аскольдовцев д.38 кв.38",
             "Санкт-Петербург"
     }
@@ -40,7 +40,7 @@ public class DeliveryPageTests extends BaseTest {
     @Owner("Denis Gubert")
     @Issue("AUT-1246")
     @ParameterizedTest(name = "Условия доставки для адреса {0}")
-    @ValueSource( strings = {
+    @ValueSource(strings = {
             "Чичеринская улица, д 2",
             "Невский проспект, д 11/2"
     }
@@ -55,12 +55,12 @@ public class DeliveryPageTests extends BaseTest {
     @Owner("Denis Gubert")
     @Issue("AUT-1247")
     @ParameterizedTest(name = "Условия самовывоза из аптеки по адресу {0}")
-    @ValueSource( strings = {
+    @ValueSource(strings = {
             "Гражданский проспект, 114к1",
             "проспект Обуховской Обороны, 229/7"
     }
     )
-    void checkPickupConditionsFromPharmacyTest(String address) throws InterruptedException {
+    void checkPickupConditionsFromPharmacyTest(String address) {
         deliveryPage.openDeliveryPage();
         deliveryPage.changeCity("Санкт-Петербург");
 

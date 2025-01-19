@@ -12,7 +12,7 @@ import pages.GOODS;
 
 public class BasketPageTests extends BaseTest {
 
-    BasketPage basketPage = new BasketPage();
+    final BasketPage basketPage = new BasketPage();
 
     @Owner("Denis Gubert")
     @Test
