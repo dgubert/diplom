@@ -28,15 +28,13 @@ public class VacancyPage extends MainPage {
     }
 
     @Step("Проверяем наличие вакансии {0}")
-    public void shoudHaveVacancy(String vacancy) {
+    public void shouldHaveVacancy(String vacancy) {
         vacanciesList.shouldHave(text(vacancy));
     }
 
     @Step("Проверяем наличие в отображаемых вакансиях {0}")
-    public void shoudHaveStringInVacancies(String str) {
-        for (SelenideElement vacancy :
-                vacanciesTitle) {
-            vacancy.shouldHave(text(str));
-        }
+    public void shouldHaveStringInVacancies(String str) {
+        vacanciesTitle.stream()
+                .forEach(vacancy -> vacancy.shouldHave(text(str)));
     }
 }

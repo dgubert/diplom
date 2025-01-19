@@ -34,7 +34,7 @@ public class VacancyPageTests extends BaseTest {
     void shouldHaveVacancies(String vacancy) {
         vacancyPage.openVacancyPage();
 
-        vacancyPage.shoudHaveVacancy(vacancy);
+        vacancyPage.shouldHaveVacancy(vacancy);
     }
 
     @Owner("Denis Gubert")
@@ -49,6 +49,6 @@ public class VacancyPageTests extends BaseTest {
         vacancyPage.openVacancyPage()
                 .filterVacanciesByString(searchString);
 
-        vacancyPage.shoudHaveStringInVacancies(searchString);
+        vacancyPage.shouldHaveStringInVacancies(searchString);
     }
 }

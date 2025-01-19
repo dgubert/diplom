@@ -9,6 +9,5 @@ public class RequestSpec {
     public static final RequestSpecification requestSpec = with()
             .filter(withCustomTemplates())
             .log().all()
-            .contentType("application/json")
-            .baseUri("https://ozerki.ru/");
+            .contentType("application/json");
 }
