@@ -21,7 +21,7 @@ public class DeliveryPage extends MainPage {
         open("/samovyvoz-i-dostavka/");
 
         LocalStorage localStorage = localStorage();
-        localStorage.setItem("ux_city", "Санкт-Петербург");
+        localStorage.setItem("ux_city", REGION.SAINT_PETERSBURG.getName());
     }
 
     @Step("Проверяем недоступность доставки по адресу {0}")
@@ -36,7 +36,7 @@ public class DeliveryPage extends MainPage {
         txtAddress.setValue(address);
         $(".CUgKW").$(byText(address)).click();
         btnCheckAddress.click();
-        $(byTagAndText("h2", "Курьерская доставка")).shouldBe(exist);
+        $(byTagAndText("h2", "Курьерская доставка")).should(exist);
         assertExistByParentTextAndText("Оплата", "Картой на сайте");
         assertExistByParentTextAndText("Прием заказов", "Круглосуточно");
         assertExistByParentTextAndText("Максимальный вес", "до 5 кг");
@@ -49,7 +49,7 @@ public class DeliveryPage extends MainPage {
         $(byText(address)).click();
 
         $(".input").shouldHave(value(address));
-        $(byTagAndText("h2", "Самовывоз из аптеки")).shouldBe(exist);
+        $(byTagAndText("h2", "Самовывоз из аптеки")).should(exist);
         assertExistByParentTextAndText("Стоимость", "Бесплатно");
         assertExistByParentTextAndText("Оплата", "Картой на сайте");
         assertExistByParentTextAndText("Оплата", "Картой или наличными в аптеке");

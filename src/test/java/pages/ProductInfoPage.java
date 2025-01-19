@@ -20,10 +20,10 @@ public class ProductInfoPage {
     public void assertProductInfo(PRODUCTS product) {
         SelenideElement form = $(byId("mainAnchor"));
 
-        form.$(byText(product.getForm())).shouldBe(exist);
-        form.$(byText(product.getDosage())).shouldBe(exist);
-        form.$(byText(product.getExpirationDate())).shouldBe(exist);
-        form.$(byText(product.getCountry())).shouldBe(exist);
-        form.$(byText(product.getPrice())).shouldBe(exist);
+        form.$(byText(product.getForm())).should(exist);
+        form.$(byText(product.getDosage())).should(exist);
+        form.$(byText(product.getExpirationDate())).should(exist);
+        form.$(byText(product.getCountry())).should(exist);
+        form.$(byText(product.getPrice())).should(exist);
     }
 }

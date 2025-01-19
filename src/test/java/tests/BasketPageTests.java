@@ -9,6 +9,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import pages.BasketPage;
 import pages.PRODUCTS;
+import pages.REGION;
 
 public class BasketPageTests extends BaseTest {
 
@@ -30,10 +31,10 @@ public class BasketPageTests extends BaseTest {
     @DisplayName("Проверка информации по товару в корзине")
     void test(PRODUCTS product) {
         basketPage.openBasketPage();
-        basketPage.changeCity("Санкт-Петербург");
-        BasketApiHelper.addItemToBasketByApi(product.getId(), 1);
+        basketPage.changeCity(REGION.SAINT_PETERSBURG);
+        BasketApiHelper.addItemToBasketByApi(REGION.SAINT_PETERSBURG, product.getId(), 1);
         basketPage.openBasketPage();
-        basketPage.assertProductInfo(product);
 
+        basketPage.assertProductInfo(product);
     }
 }

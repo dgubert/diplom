@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import pages.DeliveryPage;
+import pages.REGION;
 
 public class DeliveryPageTests extends BaseTest {
 
@@ -32,7 +33,7 @@ public class DeliveryPageTests extends BaseTest {
     )
     void addressShouldNotHaveDeliveryTest(String address) {
         deliveryPage.openDeliveryPage();
-        deliveryPage.changeCity("Санкт-Петербург");
+        deliveryPage.changeCity(REGION.SAINT_PETERSBURG);
 
         deliveryPage.addressShouldNotHaveDelivery(address);
     }
@@ -47,7 +48,7 @@ public class DeliveryPageTests extends BaseTest {
     )
     void checkAddressDeliveryConditionsTest(String address) {
         deliveryPage.openDeliveryPage();
-        deliveryPage.changeCity("Санкт-Петербург");
+        deliveryPage.changeCity(REGION.SAINT_PETERSBURG);
 
         deliveryPage.assertAddressDeliveryConditions(address);
     }
@@ -62,7 +63,7 @@ public class DeliveryPageTests extends BaseTest {
     )
     void checkPickupConditionsFromPharmacyTest(String address) {
         deliveryPage.openDeliveryPage();
-        deliveryPage.changeCity("Санкт-Петербург");
+        deliveryPage.changeCity(REGION.SAINT_PETERSBURG);
 
         deliveryPage.assertPickupConditionsFromPharmacy(address);
     }

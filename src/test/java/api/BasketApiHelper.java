@@ -5,6 +5,7 @@ import models.AddItemToBasketRequestModel;
 import models.AddItemToBasketResponseModel;
 import models.ItemJsonRequestModel;
 import org.openqa.selenium.Cookie;
+import pages.REGION;
 
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -14,7 +15,6 @@ import static specs.ResponseSpec.response200Spec;
 
 public class BasketApiHelper {
 
-    public static final int regionId = 27;
     public String cartId;
 
     public static String getCartId() {
@@ -32,7 +32,7 @@ public class BasketApiHelper {
     }
 
     @Step("Добавление товара {0} в корзину")
-    public static void addItemToBasketByApi(int productId, int quantity) {
+    public static void addItemToBasketByApi(REGION region, int productId, int quantity) {
         BasketApiHelper basketApiHelper = new BasketApiHelper();
 
         basketApiHelper.cartId = getCartId();
@@ -46,7 +46,7 @@ public class BasketApiHelper {
 
         AddItemToBasketRequestModel requestModel = new AddItemToBasketRequestModel();
         requestModel.setCartId(basketApiHelper.cartId);
-        requestModel.setRegionId(regionId);
+        requestModel.setRegionId(region.getId());
         requestModel.setItems(items);
 
 

@@ -19,6 +19,6 @@ public class BasketPage extends MainPage {
     public void assertProductInfo(PRODUCTS product) {
         SelenideElement form = $(".basket-detail__content");
 
-        form.$(byText(product.getPrice())).shouldBe(exist);
+        form.$(byText(product.getPrice())).should(exist);
     }
 }

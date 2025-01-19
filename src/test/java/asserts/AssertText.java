@@ -9,6 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 public class AssertText {
     @Step("Проверяем наличие текста {1} в блоке {2}")
     public static void assertExistByParentTextAndText(String parent, String text) {
-        $(byText(parent)).parent().$(byText(text)).shouldBe(exist);
+        $(byText(parent)).parent().$(byText(text)).should(exist);
     }
 }

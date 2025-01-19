@@ -20,10 +20,10 @@ public class MainPage {
     }
 
     @Step("Изменяем регион на {0}")
-    public void changeCity(String city) {
-        if (!linkCity.text().equals(city)) {
+    public void changeCity(REGION region) {
+        if (!linkCity.text().equals(region.getName())) {
             linkCity.click();
-            chooseCityForm.parent().parent().parent().$(byText(city)).click();
+            chooseCityForm.parent().parent().parent().$(byText(region.getName())).click();
             chooseCityForm.shouldNotBe(visible);
         }
     }
